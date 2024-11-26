@@ -15,12 +15,6 @@ services:
     
     # Specify environment variables if needed
     # environment:
-    
-    # Specify volume for live code reloading (optional)
-    # volumes:
-    
-    # Specify the command to run the development server (if different from Dockerfile)
-    # command:
 
   backend:
     # Specify the build context for the backend
@@ -32,16 +26,3 @@ services:
     
     # Specify environment variables if needed
     # environment:
-    
-    # Specify volume for live code reloading (optional)
-    # volumes:
-    
-    # Specify the command to run the development server (if different from Dockerfile)
-    # command:
-
-# Additional components (uncomment and configure as needed):
-# Define a custom network (if applicable)
-# networks:
-
-# Define volumes (if applicable)
-# volumes:
