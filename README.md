@@ -1,10 +1,10 @@
-## Multi-Container Docker Application with CI/CD: Calculator App Project
+# Multi-Container Docker Application with CI/CD: Calculator App Project
 
-#### Complete Project Instructions: [DevOps Foundations Course/Project](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Project)
+### Complete Project Instructions: [DevOps Foundations Course/Project](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Project)
 
-#### Submission by - **<FIRST_NAME> <LAST_NAME>**
+### Submission by - **Jaylon AuCoin**
 
-### Project Overview
+## Project Overview
 
 - **Brief project description:** What is the purpose of your application?
 
@@ -30,7 +30,7 @@
 <!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
 
 
-### Docker Implementation
+## Docker Implementation
 
 **Explain your Dockerfiles:**
 
@@ -54,7 +54,7 @@
 **Use this section to document your choices and steps for building the Docker images.**
 
 
-### Docker Compose YAML Configuration
+## Docker Compose YAML Configuration
 
 **Break down your `docker-compose.yml` file:**
 
@@ -72,7 +72,7 @@
 <!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
 
 
-### CI/CD Pipeline (YAML Configuration)
+## CI/CD Pipeline (YAML Configuration)
 
 **Explain your CI/CD pipeline:**
 
@@ -89,7 +89,7 @@
 <!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
 
 
-### CI/CD Pipeline (YAML Configuration)
+## CI/CD Pipeline (YAML Configuration)
 
 **Simply explain your CI/CD pipeline:**
 
@@ -106,7 +106,7 @@
 <!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
 
 
-### Assumptions
+## Assumptions
 
 - List any assumptions you made while creating the Dockerfiles, `docker-compose.yml`, or CI/CD pipeline. 
 
@@ -117,7 +117,7 @@
 <!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
 
 
-### Lessons Learned
+## Lessons Learned
 
 - What challenges did you encounter while working with Docker and CI/CD?
 - What did you learn about containerization and automation?
@@ -131,7 +131,7 @@
 <!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
 
 
-### Future Improvements
+## Future Improvements
 
 - How could you improve your Dockerfiles, `docker-compose.yml`, or CI/CD pipeline? 
 - (Optional-Just for personal reflection) Are there any additional functionalities you would like to consider for the calculator application to crate more stages in the CI/CD pipeline or add additional configuration in the Dockerfiles?
