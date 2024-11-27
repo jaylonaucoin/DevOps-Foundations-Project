@@ -23,13 +23,19 @@ jobs:
         node-version: '14'
       # TODO: Install dependencies
     - name: Install dependencies
-      run: npm install
+      run: |
+        cd frontend
+        npm install
       # TODO: Run tests
     - name: Run tests
-      run: npm test
+      run: |
+        cd frontend
+        npm test
       # TODO: Build the React app
     - name: Build the React app
-      run: npm run build
+      run: |
+        cd frontend
+        npm run build
 
   # TODO: Define a job for building and testing the backend
   backend:
