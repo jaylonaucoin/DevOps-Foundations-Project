@@ -26,16 +26,17 @@ jobs:
       run: |
         cd frontend
         npm install
-      # TODO: Run tests
-    - name: Run tests
-      run: |
-        cd frontend
-        npm test
       # TODO: Build the React app
     - name: Build the React app
       run: |
         cd frontend
         npm run build
+      # TODO: Run tests
+    - name: Run tests
+      run: |
+        cd frontend
+        npm test
+      
 
   # TODO: Define a job for building and testing the backend
   backend:
