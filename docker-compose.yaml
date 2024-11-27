@@ -6,23 +6,31 @@ services:
   frontend:
     # Specify the build context for the frontend
     build:
+      context: ./frontend
     # Map the host port to the container port
     ports:
+      - "3000:3000"
     # Specify dependencies (if applicable)
     depends_on:
+      - backend
 
     # Additional options (uncomment and configure as needed):
     
     # Specify environment variables if needed
-    # environment:
+    environment:
+      - REACT_APP_API_URL=http://backend:5000
 
   backend:
     # Specify the build context for the backend
     build:
+      context: ./backend
     # Map the host port to the container port
     ports:
+      - "5000:5000"
     
     # Additional options (uncomment and configure as needed):
     
     # Specify environment variables if needed
-    # environment:
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
