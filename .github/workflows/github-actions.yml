@@ -55,10 +55,10 @@ jobs:
         cd backend
         pip install -r requirements.txt
       # TODO: Run tests
-#    - name: Run tests
-#      run: |
-#        cd backend
-#        pytest
+    - name: Run tests
+      run: |
+        cd backend
+        pytest
 
   # TODO: Define a job for building and pushing Docker images
   docker:
