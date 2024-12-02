@@ -82,6 +82,7 @@ jobs:
     - name: Push images to Docker Hub
       run: |
         if [ ${{ github.ref }} = 'refs/heads/main' ]; then
+          echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
           docker tag frontend:latest jaucoin29/devops:frontend
           docker push jaucoin29/devops:frontend
           docker tag backend:latest jaucoin29/devops:backend
