@@ -1,6 +1,10 @@
 # DevOps Foundations Course: Calculator App Project
 
-### Submission by - **Jaylon AuCoin**
+- **Submission by:** Jaylon AuCoin
+- **Submission Date:** 03 DEC 2024
+- **GitHub Repository:** [Calculator App Project](https://github.com/jaylonaucoin/DevOps-Foundations-Project)
+- **Docker Hub Repository:** [DevOps Docker Repository](https://hub.docker.com/repository/docker/jaucoin29/devops)
+- **ZIP File URL:** [DevOps Project ZIP](https://www.dropbox.com)
 
 ## Project Overview
 
