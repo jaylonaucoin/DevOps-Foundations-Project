@@ -4,7 +4,7 @@
 - **Submission Date:** 03 DEC 2024
 - **GitHub Repository:** [Calculator App Project](https://github.com/jaylonaucoin/DevOps-Foundations-Project)
 - **Docker Hub Repository:** [DevOps Docker Repository](https://hub.docker.com/repository/docker/jaucoin29/devops)
-- **ZIP File URL:** [DevOps Project ZIP](https://www.dropbox.com)
+- **ZIP File URL:** [DevOps Project ZIP](https://www.dropbox.com/scl/fi/8mbq3q4bndf3gyg84d2lw/Jaylon-AuCoin-DevOps-Foundations-Project.zip?rlkey=y6euqrsrdsn9oxc4z05pznybz&st=x04fnxta&dl=0)
 
 ## Project Overview
 
