@@ -1,152 +1,77 @@
-# Multi-Container Docker Application with CI/CD: Calculator App Project
-
-### Complete Project Instructions: [DevOps Foundations Course/Project](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Project)
+# DevOps Foundations Course: Calculator App Project
 
 ### Submission by - **Jaylon AuCoin**
 
 ## Project Overview
 
-- **Brief project description:** What is the purpose of your application?
+  This is a multi-container Docker application that provides a calculator service with both a backend API built in 
+  Python (Flask) and a frontend interface built using React. The purpose of the application is to demonstrate 
+  containerization, service orchestration using Docker Compose, and CI/CD pipelines for automated builds, tests, and deployments.
 
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
-
-- **Which files are you implmenting? and why?:**
-
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
-
-- _**Any other explanations for personal note taking.**_
-
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
+### Structure
+  - `Dockerfile` (backend): To containerize the Flask API for portability and deployment.
+  - `Dockerfile` (frontend): To containerize the React application for consistent deployment.
+  - `docker-compose.yaml`: To orchestrate both the backend and frontend services, ensuring they work together.
+  - `.github/workflows/github-actions.yml`: Defines the CI/CD pipeline for automated builds, tests, and Docker image pushes.
 
 ## Docker Implementation
 
-**Explain your Dockerfiles:**
+- **Backend `Dockerfile`** (Python API):
 
-- **Backend Dockerfile** (Python API):
-    - Here please explain the `Dockerfile` created for the Python Backend API. 
-    - This can be a simple explanation which serves as a reference guide, or revision to you when read back the readme in future. 
-
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
-- **Frontend Dockerfile** (React App):
-    - Similar to the above section, please explain the Dockerfile created for the React Frontend Web Application. 
-
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
-**Use this section to document your choices and steps for building the Docker images.**
+  The backend Dockerfile uses `python:3.9-slim` as the base image and installs dependencies from requirements.txt. It 
+  copies the application code and exposes port 5000. The command to run the Flask app is specified.
 
 
-## Docker Compose YAML Configuration
+- **Frontend `Dockerfile`** (React App):
 
-**Break down your `docker-compose.yml` file:**
+  The frontend Dockerfile uses `node:14-alpine` base image to build the React app. It installs dependencies and builds the 
+  project.
 
-- **Services:** List the services defined. What do they represent?
-- **Networking:** How do the services communicate with each other?
-- **Volumes:** Did you use any volume mounts for persistent data?
-- **Environment Variables:** Did you define any environment variables for configuration? 
+## Docker Compose Implementation
 
-**Use this section to explain how your services interact and are configured within `docker-compose.yml`.**
+- **Services:** 
+  - `backend`: The Flask API service that runs on port 5000.
+  - `frontend`: The React application service that runs on port 3000. It depends on the `backend` service.
 
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
+## CI/CD Pipeline Implementation
 
-
-## CI/CD Pipeline (YAML Configuration)
-
-**Explain your CI/CD pipeline:**
-
-- What triggers the pipeline (e.g., push to main branch)?
-- What are the different stages (build, test, deploy)?
-- How are Docker images built and pushed to a registry (if applicable)?
-
-**Use this section to document your automated build and deployment process.**
-
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
-
-## CI/CD Pipeline (YAML Configuration)
-
-**Simply explain your CI/CD pipeline:**
-
-- What triggers the pipeline (e.g., push to main branch)?
-- What are the different stages (build, test, deploy)?
-- How are Docker images built and pushed to a registry?
-
-**Use this section to document your automated build, and docker process.**
-
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
+- The pipeline triggers on pushes and pull requests from the `main` branch.
+- Stages: 
+  - `frontend`: *Builds the React app and runs tests.*
+    - **Checkout code**: Checks out the frontend code.
+    - **Setup Node.js**: Sets up Node.js.
+    - **Install dependencies**: Installs the frontend dependencies.
+    - **Run tests**: Runs the React tests.
+    - **Build the React app**: Builds the React app.
+  - `backend`: *Builds the Python API and runs tests.*
+    - **Checkout code**: Checks out the backend code.
+    - **Setup Python**: Sets up Python.
+    - **Install dependencies**: Installs the backend dependencies.
+    - **Run tests**: Runs the Python tests.
+  - `docker`: *Pushes the Docker images to the Docker Hub.*
+    - **Checkout code**: Checks out the code.
+    - **Setup Docker**: Sets up Docker Buildx.
+    - **Build frontend Docker image**: Builds the frontend Docker image with `docker build`.
+    - **Build backend Docker image**: Builds the backend Docker image with `docker build`.
+    - **Push images to Docker Hub**: The frontend and backend images are tagged and pushed to the Docker Hub.
 
 ## Assumptions
 
-- List any assumptions you made while creating the Dockerfiles, `docker-compose.yml`, or CI/CD pipeline. 
-
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
+- The CI/CD pipeline assumes valid secrets for Docker Hub are available.
+- The CLI prompted me to declare the `babel` dependencies, so I did.
+- The Docker documentation told me I should use `setup-buildx-action` to setup Docker, so I did.
 
 ## Lessons Learned
 
-- What challenges did you encounter while working with Docker and CI/CD?
-- What did you learn about containerization and automation?
-
-**Use this section to reflect on your experience and learnings when implementing this project.**
-
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
+- Gained practical insights into containerization, service orchestration, and automated CI/CD pipelines.
+- Learned how to create Dockerfiles for Python and React applications.
+- Understood how to use Docker Compose to manage multi-container applications.
+- Learned how to define CI/CD pipelines using GitHub Actions.
+- Gained experience with Docker Hub for image storage and deployment.
+- Learned how to troubleshoot Docker and CI/CD issues.
+- Gained a deeper understanding of the DevOps workflow and best practices.
 
 ## Future Improvements
 
-- How could you improve your Dockerfiles, `docker-compose.yml`, or CI/CD pipeline? 
-- (Optional-Just for personal reflection) Are there any additional functionalities you would like to consider for the calculator application to crate more stages in the CI/CD pipeline or add additional configuration in the Dockerfiles?
-
-**Use this section to brainstorm ways to enhance your project.**
-
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- Include explanation here -->
-<!-- NOTE: It is not compulsory to include detailed explanations, writing succint concise points would also sufice. Make sure maintain readability and clarity. -->
-
-
-
-
-
-
-<!-- BEST OF LUCK! -->
+- Implement more robust error handling in the backend.
+- Expand CI/CD stages to include deployment to cloud services like AWS or Azure.
